@@ -1,0 +1,481 @@
+backend:
+  name: git-gateway
+  # branch: master
+
+media_folder: "assets/media/image"
+public_folder: "/media/image"
+# publish_mode: "editorial_workflow"
+
+
+
+collections:
+
+
+  # Posts
+  - name: "articles"
+    label: "Articles"
+    i18n: true
+    folder: "content/articles"
+    media_folder: "assets/media/image"
+    create: true
+    path: "{{slug}}/index"
+    editor:
+      preview: false
+
+    sortable_fields:
+      - "date"
+      - "title"
+      - "draft"
+
+    fields:
+      - label: "Draft"
+        name: "draft"
+        required: false
+        default: false
+        widget: "boolean"
+
+      - label: "Featured Image"
+        name: "thumbnail"
+        required: false
+        widget: "image"
+
+      - label: "Date"
+        name: "date"
+        widget: "datetime"
+        default: ""
+        format: "YYYY-MM-DD"
+
+      - label: "Title"
+        name: "title"
+        widget: "string"
+
+      - label: "Meta Title"
+        name: "meta_title"
+        widget: "string"
+        required: false
+
+      - label: "Meta Description"
+        name: "meta_description"
+        widget: "string"
+        required: false
+
+      - label: "Excerpt"
+        name: "excerpt"
+        widget: "text"
+        required: false
+
+
+
+      # - label: "Featured"
+      #   name: "featured"
+      #   required: false
+      #   default: false
+      #   widget: "boolean"
+
+      # - label: "Category"
+      #   name: "category"
+      #   required: false
+      #   widget: "relation"
+      #   collection: "category"
+      #   search_fields: ["{{title}}"]
+      #   value_field: "{{category_code}}"
+      #   display_fields: ["{{title}}"]
+
+      # - label: "Tags"
+      #   name: "tags"
+      #   required: false
+      #   widget: "list"
+
+
+      # - label: "Video Link"
+      #   name: "video_link"
+      #   required: false
+      #   widget: "string"
+      #   hint: "e.g. URL of the YouTube video"
+
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+
+# ========================================
+  # - name: "category"
+  #   label: "Category"
+  #   folder: "content/tables/category"
+  #   create: true
+  #   path: "{{slug}}/index"
+  #   editor:
+  #     preview: false
+  #   fields:
+
+  #   - label: "title"
+  #     name: "title"
+  #     widget: "string"
+  #     hint: "Name for the category"
+  #   - label: "Category Code"
+  #     name: "category_code"
+  #     widget: "string"
+  #     hint: "ID of the category"
+  #   - label: "Category Description"
+  #     name: "category_description"
+  #     required: false
+  #     widget: "text"
+  #     hint: "Description of the category"
+
+# ========================================
+  - name: "home"
+    label: "Home"
+    folder: "content/home"
+    media_folder: "./"
+    editor:
+      preview: false
+    sortable_fields:
+      - "weight"
+      - "title"
+    nested:
+      depth: 2
+    fields:
+      - label: "Weight"
+        name: "weight"
+        required: false
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Meta Title"
+        name: "meta_title"
+        widget: "string"
+        required: false
+      - label: "Meta Description"
+        name: "meta_description"
+        widget: "string"
+        required: false
+      - label: "CTA Text"
+        name: "cta_text"
+        widget: "string"
+        required: false
+      - label: "CTA Link"
+        name: "cta_link"
+        widget: "string"
+        required: false
+      - label: "Image"
+        name: "image"
+        required: false
+        widget: "image"
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        required: false
+
+# ========================================
+  - name: "a-propos"
+    label: "Á propos"
+    folder: "content/a-propos"
+    editor:
+      preview: false
+    sortable_fields:
+      - "weight"
+      - "title"
+    nested:
+      depth: 2
+    fields:
+      - label: "Weight"
+        name: "weight"
+        required: false
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Meta Title"
+        name: "meta_title"
+        widget: "string"
+        required: false
+      - label: "Meta Description"
+        name: "meta_description"
+        widget: "string"
+        required: false
+      - label: "Descripiton"
+        name: "description"
+        widget: "string"
+        required: false
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        required: false
+
+# ========================================
+  - name: "coaching"
+    label: "Coaching"
+    folder: "content/coaching"
+    editor:
+      preview: false
+    sortable_fields:
+      - "weight"
+      - "title"
+    nested:
+      depth: 2
+    fields:
+      - label: "Weight"
+        name: "weight"
+        required: false
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Meta Title"
+        name: "meta_title"
+        widget: "string"
+        required: false
+      - label: "Meta Description"
+        name: "meta_description"
+        widget: "string"
+        required: false
+      - label: "Descripiton"
+        name: "description"
+        widget: "string"
+        required: false
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        required: false
+
+# ========================================
+  - name: "Qu'est-ce qu'EM"
+    label: "Qu'est-ce qu'EM"
+    folder: "content/quest-ce-em"
+    editor:
+      preview: false
+    sortable_fields:
+      - "weight"
+      - "title"
+    nested:
+      depth: 2
+    fields:
+      - label: "Weight"
+        name: "weight"
+        required: false
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Meta Title"
+        name: "meta_title"
+        widget: "string"
+        required: false
+      - label: "Meta Description"
+        name: "meta_description"
+        widget: "string"
+        required: false
+      - label: "Descripiton"
+        name: "description"
+        widget: "string"
+        required: false
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        required: false
+
+# ========================================
+  - name: "les-declencheurs"
+    label: "Les déclencheurs"
+    folder: "content/les-declencheurs"
+    editor:
+      preview: false
+    sortable_fields:
+      - "weight"
+      - "title"
+    nested:
+      depth: 2
+    fields:
+      - label: "Weight"
+        name: "weight"
+        required: false
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        required: false
+      - label: "Meta Title"
+        name: "meta_title"
+        widget: "string"
+        required: false
+      - label: "Meta Description"
+        name: "meta_description"
+        widget: "string"
+        required: false
+      - label: "Descripiton"
+        name: "description"
+        widget: "string"
+        required: false
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        required: false
+
+# ========================================
+  - name: "les-strategies"
+    label: "Les stratégies"
+    folder: "content/les-strategies"
+    editor:
+      preview: false
+    sortable_fields:
+      - "weight"
+      - "title"
+    nested:
+      depth: 2
+    fields:
+      - label: "Weight"
+        name: "weight"
+        required: false
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Meta Title"
+        name: "meta_title"
+        widget: "string"
+        required: false
+      - label: "Meta Description"
+        name: "meta_description"
+        widget: "string"
+        required: false
+      - label: "Descripiton"
+        name: "description"
+        widget: "string"
+        required: false
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        required: false
+
+# ========================================
+  - name: "les-strategies-de-recuperation"
+    label: "Les stratégies de récupération"
+    folder: "content/les-strategies-de-recuperation"
+    editor:
+      preview: false
+    sortable_fields:
+      - "weight"
+      - "title"
+    nested:
+      depth: 2
+    fields:
+      - label: "Weight"
+        name: "weight"
+        required: false
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Meta Title"
+        name: "meta_title"
+        widget: "string"
+        required: false
+      - label: "Meta Description"
+        name: "meta_description"
+        widget: "string"
+        required: false
+      - label: "Descripiton"
+        name: "description"
+        widget: "string"
+        required: false
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        required: false
+
+# ========================================
+  - name: "contact"
+    label: "Contact"
+    folder: "content/contact"
+    editor:
+      preview: false
+    sortable_fields:
+      - "weight"
+      - "title"
+    nested:
+      depth: 2
+    fields:
+      - label: "Weight"
+        name: "weight"
+        widget: "number"
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Meta Title"
+        name: "meta_title"
+        widget: "string"
+        required: false
+      - label: "Meta Description"
+        name: "meta_description"
+        widget: "string"
+        required: false
+      - label: "Descripiton"
+        name: "description"
+        widget: "string"
+        required: false
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        required: false
+
+# ========================================
+  - name: "references"
+    label: "Références"
+    folder: "content/references"
+    editor:
+      preview: false
+    sortable_fields:
+      - "weight"
+      - "title"
+    nested:
+      depth: 2
+    fields:
+      - label: "Weight"
+        name: "weight"
+        widget: "number"
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Meta Title"
+        name: "meta_title"
+        widget: "string"
+        required: false
+      - label: "Meta Description"
+        name: "meta_description"
+        widget: "string"
+        required: false
+      - label: "Descripiton"
+        name: "description"
+        widget: "string"
+        required: false
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        required: false
+
+# ========================================
+  - name: "termes-et-conditions"
+    label: "Termes et conditions"
+    folder: "content/termes-et-conditions"
+    editor:
+      preview: false
+    sortable_fields:
+      - "weight"
+      - "title"
+    nested:
+      depth: 2
+    fields:
+      - label: "Weight"
+        name: "weight"
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Meta Title"
+        name: "meta_title"
+        widget: "string"
+        required: false
+      - label: "Meta Description"
+        name: "meta_description"
+        widget: "string"
+        required: false
+      - label: "Descripiton"
+        name: "description"
+        widget: "string"
+        required: false
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        required: false

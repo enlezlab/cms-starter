@@ -1,21 +1,14 @@
 backend:
   name: git-gateway
-  # branch: master
 
-media_folder: "/media"
-public_folder: "assets"
-# publish_mode: "editorial_workflow"
-
-
+media_folder: "assets/media"
+public_folder: "/media/image"
 
 collections:
-
-
-  # Posts
   - name: "articles"
     label: "Articles"
     folder: "collections/posts"
-    media_folder: "/media"
+    media_folder: "assets/media"
     create: true
     path: "{{slug}}/index"
     editor:
@@ -72,36 +65,38 @@ collections:
   - name: "dataset-one"
     label: "Dataset One"
     folder: "collections/dataset-one"
+    media_folder: "assets/media"
     create: true
     path: "{{slug}}/index"
     editor:
       preview: false
+
     sortable_fields:
-      - "weight"
+      - "date"
       - "title"
-    nested:
-      depth: 2
+      - "draft"
+
     fields:
-      - label: "Weight"
-        name: "weight"
+      - label: "Draft"
+        name: "draft"
         required: false
+        default: false
+        widget: "boolean"
+
       - label: "Title"
         name: "title"
         widget: "string"
+
       - label: "Meta Title"
         name: "meta_title"
         widget: "string"
         required: false
+
       - label: "Meta Description"
         name: "meta_description"
         widget: "string"
         required: false
-      - label: "Descripiton"
-        name: "description"
-        widget: "string"
-        required: false
+
       - label: "Body"
         name: "body"
         widget: "markdown"
-        required: false
-
